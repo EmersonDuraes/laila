@@ -2223,41 +2223,6 @@ ul{list-style: none}
 }
 
 
-
-
-
-
-
-
-
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
-}
-
-.video-container {
-    position: relative;
-    width: 100%;
-    /* Altura do container, ajuste conforme necessário. Use 'vh' para uma altura responsiva em relação à viewport. */
-    height: 90vh; /* Ocupa 50% da altura da viewport */
-    overflow: hidden; /* Garante que o vídeo não "estoure" o container */
-}
-
-.video-container video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
-    /* Garante que o vídeo preencha o container sem distorção, cortando o que não couber */
-    object-fit: cover;
-}
-
 /* Opcional: Adicione um overlay escuro sobre o vídeo para melhor legibilidade do texto se for adicionar texto sobre o vídeo */
 /*
 .video-container::after {
@@ -2303,6 +2268,20 @@ body {
 
 
 
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* Proporção 16:9 (ajuste para outras proporções) */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
 
 
